@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antonio Javier Cabrera · Desarrollador Python</title>
+<meta name="description" content="Portfolio de Antonio Javier Cabrera, desarrollador Python en formación: proyectos con Flask, FastAPI, React y Pygame.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef3fa; --surface:#ffffff; --ink:#16253d; --muted:#52627a;
+  --line:#c9d5e6; --accent:#2a64d4; --accent-ink:#ffffff; --chip:#dce8fb;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#2b4268; --surface:#37507d; --ink:#eef3fb; --muted:#b9c7de;
+    --line:#506d9f; --accent:#9bbdf8; --accent-ink:#12233f; --chip:#435f93;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;padding-bottom:1.5rem}
+header strong{font:800 1.125rem var(--head)}
+nav{display:flex;gap:1.5rem}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--accent)}
+
+.hero{padding:4rem 0 3.5rem}
+.hero h1{margin:0;font:800 clamp(2.75rem,9vw,5.75rem)/1 var(--head);letter-spacing:-0.03em;text-wrap:balance}
+.hero p{max-width:36rem;margin:1.75rem 0 0;font-size:1.25rem;color:var(--muted)}
+.hero p strong{color:var(--ink);font-weight:500}
+
+h2{font:800 1.75rem/1.2 var(--head);margin:0 0 1.5rem;letter-spacing:-0.01em}
+section{padding:2.5rem 0}
+
+.project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:2.25rem;padding:2.25rem 0;border-top:1px solid var(--line)}
+.shot{position:relative;margin:0;aspect-ratio:var(--ar,16/10);border-radius:10px;overflow:hidden;background:var(--chip);display:grid;place-items:center;border:1px solid var(--line)}
+.shot span{font:800 1.25rem var(--head);color:var(--accent);padding:1rem;text-align:center}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.project h3{margin:0 0 .5rem;font:800 1.5rem/1.25 var(--head)}
+.project p{margin:0 0 1rem}
+.tags{list-style:none;margin:0 0 1.25rem;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.tags li{background:var(--chip);padding:.15rem .7rem;border-radius:99px;font-size:.9rem;font-weight:500}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.55rem 1.1rem;border-radius:8px;text-decoration:none;font-weight:500}
+.btn:hover{filter:brightness(1.08)}
+.status{display:inline-block;margin:0;padding:.45rem .9rem;border:1.5px dashed var(--accent);border-radius:8px;font-weight:500}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem 2rem;margin:0}
+.skills dt{font:800 1rem var(--head);margin-bottom:.25rem}
+.skills dd{margin:0;color:var(--muted)}
+
+.contact ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:1.125rem}
+.contact a{color:var(--accent);font-weight:500}
+footer{padding:2.5rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:720px){
+  .project{grid-template-columns:1fr;gap:1.25rem}
+  .hero{padding:2.5rem 0}
+  nav{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <strong>Antonio Javier Cabrera</strong>
+    <nav aria-label="Principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#tecnologias">Tecnologías</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Antonio Javier Cabrera</h1>
+      <p><strong>Desarrollador Python en formación.</strong> Estudio la Tecnicatura Superior en Desarrollo de Software en el IES 9023 CESIT y construyo aplicaciones: del backend a la interfaz. Me interesa el diseño de software, las bases de datos y los frameworks web. Busco un trabajo de medio tiempo o una pasantía, preferentemente remoto, aunque también me sirve presencial.</p>
+    </div>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+
+      <article class="project">
+        <figure class="shot" style="--ar:1069/550">
+          <span>CRUD Biblioteca</span>
+          <img src="img/crud-biblioteca.png" alt="Captura de la aplicación CRUD Biblioteca" onerror="this.remove()">
+        </figure>
+        <div>
+          <h3>CRUD Biblioteca</h3>
+          <p>Aplicación web simple para gestionar una colección de libros: se carga título, autor, género y año, y cada libro se puede editar o eliminar. Backend en Flask con base de datos MySQL y frontend en React.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>MySQL</li><li>uv</li><li>React</li><li>Vite</li></ul>
+          <a class="btn" href="https://github.com/javicabrera10/sistema-gestion-biblioteca-crud">Ver código en GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="shot" style="--ar:805/634">
+          <span>Reiko</span>
+          <img src="img/reiko.png" alt="Captura de una pelea en Reiko: Heredero del Trono" onerror="this.remove()">
+        </figure>
+        <div>
+          <h3>Reiko</h3>
+          <p>Beat 'em up clásico de peleas callejeras hecho con Python y Pygame. Reiko, personaje del universo de Mortal Kombat, lucha para salvar la Tierra de la invasión de Omni-Man, y su padrastro Shao Khan le promete el trono como recompensa. Tiene muchos movimientos especiales, barras de vida, vidas, puntos y menú de pausa con guardado de partida, y está armado para crecer y hacerse mucho más grande. Proyecto personal inspirado en Mortal Kombat.</p>
+          <ul class="tags"><li>Python</li><li>Pygame</li></ul>
+          <a class="btn" href="https://github.com/javicabrera10/proyecto-pygame">Ver código en GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="shot" style="--ar:1288/570">
+          <span>Sabelo</span>
+          <img src="img/sabelo.png" alt="Panel de Sabelo con puntos, reputación, matches y habilidades" onerror="this.remove()">
+        </figure>
+        <div>
+          <h3>Sabelo</h3>
+          <p>Plataforma donde estudiantes se ayudan entre sí: el sistema cruza lo que cada uno sabe con lo que quiere aprender. Ya funcionan registro y login con JWT, perfiles con habilidades, matches recomendados, un panel personal con puntos y reputación, preguntas y respuestas, valoraciones, notificaciones y moderación.</p>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>MySQL</li><li>React</li><li>JWT</li></ul>
+          <p class="status">En desarrollo: el código todavía no está publicado.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="tecnologias">
+      <h2>Tecnologías</h2>
+      <dl class="skills">
+        <div><dt>Backend</dt><dd>Python, Flask, FastAPI, MySQL, autenticación con JWT</dd></div>
+        <div><dt>Frontend</dt><dd>React, Vite, JavaScript, HTML, CSS</dd></div>
+        <div><dt>Herramientas</dt><dd>Git, GitHub, uv, Pygame</dd></div>
+      </dl>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Contacto</h2>
+      <ul>
+        <li>Email: <a href="mailto:javi.ies9023@gmail.com">javi.ies9023@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/javicabrera10">github.com/javicabrera10</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/javier-cabrera-188742391/">linkedin.com/in/javier-cabrera-188742391</a></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Antonio Javier Cabrera</div>
+</footer>
+
+</body>
+</html>
